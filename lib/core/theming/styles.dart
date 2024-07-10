@@ -24,6 +24,11 @@ class StylesManager {
     color: ColorManager.grey,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font16BlueRegular = TextStyle(
+  fontSize: 16,
+  color: ColorManager.mainBlue,
+  fontWeight: FontWeightHelper.regular,
+  );
   static TextStyle font16White500 = TextStyle(
     fontSize: 16,
     color: Colors.white,

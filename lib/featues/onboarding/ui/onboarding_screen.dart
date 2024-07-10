@@ -1,9 +1,12 @@
+import 'package:doc_advanced/core/helper/extensions.dart';
 import 'package:doc_advanced/core/theming/styles.dart';
+import 'package:doc_advanced/core/widgets/custom_button.dart';
 import 'package:doc_advanced/featues/onboarding/ui/widgets/custom_logo_text.dart';
 import 'package:doc_advanced/featues/onboarding/ui/widgets/doctor_image_and_text.dart';
-import 'package:doc_advanced/featues/onboarding/ui/widgets/get_start_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/routing/routes.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -30,7 +33,9 @@ class OnboardingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                GetStartButton(),
+                CustomButton(text: 'Get Start',function: (){
+                  context.pushNamed(Routes.loginScreen);
+                },),
               ],
             ),
           ),

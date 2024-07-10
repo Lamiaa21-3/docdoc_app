@@ -1,4 +1,7 @@
 import 'package:doc_advanced/core/theming/styles.dart';
+import 'package:doc_advanced/core/widgets/custom_button.dart';
+import 'package:doc_advanced/featues/login/ui/widgets/terms_resh_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -45,19 +48,37 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         verticalSpace(18),
                         AppTextFormField(
-                          hintText: 'Email',
+                          hintText: 'Password',
                           isObscureText: isObscureText,
                           suffixIcon: GestureDetector(
                               onTap: () {
                                 setState(() {
-
-                                  isObscureText=!isObscureText;
+                                  isObscureText = !isObscureText;
                                 });
                               },
                               child: Icon(isObscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                         ),
+                        verticalSpace(26),
+                        Align(
+                          alignment: AlignmentDirectional.centerEnd,
+                          child: Text(
+                            'forget Password ?',
+                            style: StylesManager.font16BlueRegular,
+                          ),
+                        ),
+                        verticalSpace(40),
+                        const CustomButton(
+                          text: 'Login ',
+                          padding: EdgeInsets.only(
+                            left: 5.0,
+                            right: 5,
+                          ),
+                        ),
+                        verticalSpace(16),
+                        TermsRichText(),
+
                       ],
                     )),
               ],

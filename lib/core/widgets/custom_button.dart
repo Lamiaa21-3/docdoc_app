@@ -1,3 +1,5 @@
+
+
 import 'package:doc_advanced/core/helper/extensions.dart';
 import 'package:doc_advanced/core/theming/color.dart';
 import 'package:doc_advanced/core/theming/styles.dart';
@@ -6,19 +8,20 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/routing/routes.dart';
 
-class GetStartButton extends StatelessWidget {
-  const GetStartButton({super.key});
+class CustomButton extends StatelessWidget {
+  final String text;
+  final void Function()? function;
+  final EdgeInsets ? padding;
+  const CustomButton({super.key, required this.text, this.function, this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 20.0,right: 20,top: 10),
+      padding: padding?? EdgeInsets.only(left: 20.0,right: 20,top: 10),
       child: TextButton(
-        onPressed: () {
-          context.pushNamed(Routes.loginScreen);
-        },
+        onPressed:function,
         style:  ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(Colors.blue),
+          backgroundColor: const WidgetStatePropertyAll(Colors.blue),
           // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: WidgetStatePropertyAll(
             Size(double.infinity, 50),
@@ -30,9 +33,10 @@ class GetStartButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          'Get Started ',
+          text,
           style: StylesManager.font16White500,
         ),
+
       ),
     );
   }
