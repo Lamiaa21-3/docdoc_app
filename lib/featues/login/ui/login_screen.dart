@@ -1,5 +1,6 @@
 import 'package:doc_advanced/core/theming/styles.dart';
 import 'package:doc_advanced/core/widgets/custom_button.dart';
+import 'package:doc_advanced/featues/login/ui/widgets/signup_text_speech.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/terms_resh_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -78,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         verticalSpace(16),
                         TermsRichText(),
+                        const SignupRichText(),
 
                       ],
                     )),
