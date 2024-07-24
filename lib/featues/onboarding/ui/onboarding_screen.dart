@@ -23,8 +23,8 @@ class OnboardingScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                LogoAndName(),
-                DoctorImageAndText(),
+                const LogoAndName(),
+                const DoctorImageAndText(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0,right: 5),
                   child: Text(

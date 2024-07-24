@@ -1,11 +1,15 @@
 import 'package:doc_advanced/featues/login/data/model/login_request_body.dart';
 import 'package:doc_advanced/featues/login/logic/login_state.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../data/repois/login_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 

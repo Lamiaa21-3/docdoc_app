@@ -1,7 +1,5 @@
 import 'package:doc_advanced/core/theming/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class DoctorImageAndText extends StatelessWidget {
   const DoctorImageAndText({super.key});
@@ -20,7 +18,7 @@ class DoctorImageAndText extends StatelessWidget {
               ],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
-              stops: ([0.14, 0.4]),
+              stops: (const [0.14, 0.4]),
             ),
           ),
           child: Image.asset('asset/images/doctor.png'),

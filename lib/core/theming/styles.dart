@@ -19,17 +19,17 @@ class StylesManager {
     color: ColorManager.darkBlue,
     fontWeight: FontWeightHelper.medium,
   );
-  static TextStyle font14GrayRegular = TextStyle(
+  static TextStyle font14GrayRegular = const TextStyle(
     fontSize: 14,
     color: ColorManager.grey,
     fontWeight: FontWeightHelper.regular,
   );
-  static TextStyle font16BlueRegular = TextStyle(
+  static TextStyle font16BlueRegular = const TextStyle(
   fontSize: 16,
   color: ColorManager.mainBlue,
   fontWeight: FontWeightHelper.regular,
   );
-  static TextStyle font16White500 = TextStyle(
+  static TextStyle font16White500 = const TextStyle(
     fontSize: 16,
     color: Colors.white,
     fontWeight: FontWeight.w500,
@@ -39,7 +39,7 @@ class StylesManager {
     color: ColorManager.mainBlue,
     fontWeight: FontWeightHelper.bold,
   );
-  static TextStyle font14LightGrayRegular = TextStyle(
+  static TextStyle font14LightGrayRegular = const TextStyle(
     fontSize: 14,
     color: ColorManager.lightGrey,
     fontWeight: FontWeightHelper.regular,

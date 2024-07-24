@@ -1,13 +1,12 @@
 import 'package:doc_advanced/core/theming/styles.dart';
 import 'package:doc_advanced/core/widgets/custom_button.dart';
+import 'package:doc_advanced/featues/login/ui/widgets/email_and_password.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/signup_text_speech.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/terms_resh_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helper/spacing.dart';
-import '../../../core/widgets/app_text_form_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,8 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
-  bool isObscureText = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,49 +38,31 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: StylesManager.font14GrayRegular,
                 ),
                 verticalSpace(36),
-                Form(
-                    key: formKey,
-                    child: Column(
-                      children: [
-                        const AppTextFormField(
-                          hintText: 'Email',
-                        ),
-                        verticalSpace(18),
-                        AppTextFormField(
-                          hintText: 'Password',
-                          isObscureText: isObscureText,
-                          suffixIcon: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  isObscureText = !isObscureText;
-                                });
-                              },
-                              child: Icon(isObscureText
-                                  ? Icons.visibility
-                                  : Icons.visibility_off)),
-                        ),
-                        verticalSpace(26),
-                        Align(
-                          alignment: AlignmentDirectional.centerEnd,
-                          child: Text(
-                            'forget Password ?',
-                            style: StylesManager.font16BlueRegular,
-                          ),
-                        ),
-                        verticalSpace(40),
-                        const CustomButton(
-                          text: 'Login ',
-                          padding: EdgeInsets.only(
-                            left: 5.0,
-                            right: 5,
-                          ),
-                        ),
-                        verticalSpace(16),
-                        TermsRichText(),
-                        const SignupRichText(),
+                Column(
+                  children: [
+                    const EmailAndPassword(),
 
-                      ],
-                    )),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        'forget Password ?',
+                        style: StylesManager.font16BlueRegular,
+                      ),
+                    ),
+                    verticalSpace(40),
+                    const CustomButton(
+                      text: 'Login ',
+                      padding: EdgeInsets.only(
+                        left: 5.0,
+                        right: 5,
+                      ),
+                    ),
+                    verticalSpace(16),
+                    const TermsRichText(),
+                    const SignupRichText(),
+
+                  ],
+                ),
               ],
             ),
           ),
