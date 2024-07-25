@@ -1,5 +1,6 @@
 import 'package:doc_advanced/core/di/independency_injection.dart';
 import 'package:doc_advanced/core/routing/routes.dart';
+import 'package:doc_advanced/featues/home/home_screen.dart';
 import 'package:doc_advanced/featues/login/logic/login_cubit.dart';
 import 'package:doc_advanced/featues/login/ui/login_screen.dart';
 import 'package:doc_advanced/featues/onboarding/ui/onboarding_screen.dart';
@@ -18,6 +19,12 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create : (context) =>getIt<LoginCubit>(),
               child: const LoginScreen()),
+        );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+              create : (context) =>getIt<LoginCubit>(),
+              child: const HomeScreen()),
         );
       default:
         return MaterialPageRoute(

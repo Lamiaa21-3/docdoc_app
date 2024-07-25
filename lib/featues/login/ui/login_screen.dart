@@ -1,12 +1,16 @@
 import 'package:doc_advanced/core/theming/styles.dart';
 import 'package:doc_advanced/core/widgets/custom_button.dart';
+import 'package:doc_advanced/featues/login/logic/login_cubit.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/email_and_password.dart';
+import 'package:doc_advanced/featues/login/ui/widgets/login_bloc_listener.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/signup_text_speech.dart';
 import 'package:doc_advanced/featues/login/ui/widgets/terms_resh_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helper/spacing.dart';
+import '../data/model/login_request_body.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,8 +20,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 Column(
                   children: [
                     const EmailAndPassword(),
-
                     Align(
                       alignment: AlignmentDirectional.centerEnd,
                       child: Text(
@@ -50,7 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     verticalSpace(40),
-                    const CustomButton(
+                    CustomButton(
+                      function: validateAndThenDoLogin(context),
                       text: 'Login ',
                       padding: EdgeInsets.only(
                         left: 5.0,
@@ -60,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     verticalSpace(16),
                     const TermsRichText(),
                     const SignupRichText(),
-
+                    LoginBlocListener(),
                   ],
                 ),
               ],
@@ -69,5 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  validateAndThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState(LoginRequestBody(
+            email: context.read<LoginCubit>().emailController.text,
+            password: context.read<LoginCubit>().passwordController.text,
+          ));
+    }
   }
 }

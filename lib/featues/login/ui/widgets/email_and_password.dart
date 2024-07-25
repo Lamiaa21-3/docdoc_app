@@ -17,6 +17,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   // final formKey = GlobalKey<FormState>();
   bool isObscureText = true;
   late TextEditingController passwordController;
+  bool hasUpperCase = false;
+  bool hasLowerCase = false;
+  bool hasNumbers = false;
+  bool hasMiniLength = false;
+  bool hasSpecialCharacters = false;
 
   @override
   void initState() {
@@ -27,41 +32,46 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
 
   @override
   Widget build(BuildContext context) {
-    return  Form(
+    return Form(
       child: Column(
         children: [
-           AppTextFormField(
-             controller:context.read<LoginCubit>().emailController,
-            hintText: 'Email',
-             validator: ( value) {
-              if(value== null || value.isEmpty)
-                {
-                  return ' please enter your email';
-                }
-           },
-          ),
-          verticalSpace(18),
           AppTextFormField(
-            validator: ( value) {
-              if(value== null || value.isEmpty)
-              {
+            controller: context.read<LoginCubit>().emailController,
+            hintText: 'Email',
+            validator: (value) {
+              if (value == null || value.isEmpty) {
                 return ' please enter your email';
               }
             },
-            controller:context.read<LoginCubit>().passwordController,
+          ),
+          verticalSpace(18),
+          AppTextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return ' please enter your email';
+              }
+            },
+            controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
             isObscureText: isObscureText,
             suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isObscureText = !isObscureText;
-                  });
-                },
-                child: Icon(
-                    isObscureText ? Icons.visibility : Icons.visibility_off)),
+              onTap: () {
+                setState(() {
+                  isObscureText = !isObscureText;
+                });
+              },
+              child:
+                  Icon(isObscureText ? Icons.visibility : Icons.visibility_off),
+            ),
           ),
           verticalSpace(26),
-          PasswordValidations(),
+          PasswordValidations(
+            hasUpperCase: hasUpperCase,
+            hasLowerCase: hasLowerCase,
+            hasNumbers: hasNumbers,
+            hasMiniLength: hasMiniLength,
+            hasSpecialCharacters: hasSpecialCharacters,
+          ),
         ],
       ),
     );
