@@ -14,11 +14,13 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const OnboardingScreen(),
         );
+
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create : (context) =>getIt<LoginCubit>(),
-              child: const LoginScreen()),
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(

@@ -12,14 +12,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helper/spacing.dart';
 import '../data/model/login_request_body.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +69,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   validateAndThenDoLogin(BuildContext context) {
-    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    final formState = context.read<LoginCubit>().formKey.currentState;
+    if (formState?.validate()??true) {
       context.read<LoginCubit>().emitLoginState(LoginRequestBody(
             email: context.read<LoginCubit>().emailController.text,
             password: context.read<LoginCubit>().passwordController.text,
