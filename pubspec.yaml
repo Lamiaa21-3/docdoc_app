@@ -48,6 +48,9 @@ dependencies:
   retrofit_generator: ^8.1.2
   flutter_bloc: ^8.1.6
   get_it: ^7.7.0
+  intl:
+  easy_localization: ^3.0.7+1
+
 
 dev_dependencies:
   flutter_test:
