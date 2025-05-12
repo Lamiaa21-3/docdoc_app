@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'core/di/independency_injection.dart';
 
 void main() {
+  setupGetIt();
+  // setupLocator();
   runApp(
+
     DocApp(
       appRouter: AppRouter(),
     ),

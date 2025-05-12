@@ -3,6 +3,8 @@ import 'package:doc_advanced/core/theming/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/routing/routes.dart';
+
 class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
 final AppRouter appRouter;
@@ -13,11 +15,13 @@ final AppRouter appRouter;
       designSize: Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner:false,
         title: "Doc App",
         theme: ThemeData(
           primaryColor: ColorManager.mainBlue,
         ),
         onGenerateRoute: appRouter.generateRoute,
+        initialRoute: Routes.onBoardingScreen,
       ),
 
     );
