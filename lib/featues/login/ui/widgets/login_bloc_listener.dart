@@ -38,7 +38,7 @@ class LoginBlocListener extends StatelessWidget {
           },
         );
       },
-      child: const SizedBox.shrink(),
+      child: const SizedBox.shrink(),// smallest widget
     );
   }
 
@@ -46,7 +46,7 @@ class LoginBlocListener extends StatelessWidget {
       showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        icon: Icon(
+        icon: const Icon(
           Icons.error,
           color: Colors.red,
           size: 32,

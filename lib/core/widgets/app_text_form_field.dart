@@ -44,7 +44,7 @@ class AppTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hintText,
-        isDense: true,
+        isDense: true, // make field less height
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(horizontal: 18.w, vertical: 30.h),
         focusedBorder: focusedBorder ??

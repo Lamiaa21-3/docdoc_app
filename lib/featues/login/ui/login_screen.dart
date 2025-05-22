@@ -47,9 +47,11 @@ class LoginScreen extends StatelessWidget {
                     ),
                     verticalSpace(40),
                     CustomButton(
-                      function: validateAndThenDoLogin(context),
+                      function:() {
+                        validateThenDoLogin(context);
+                        },
                       text: 'Login ',
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         left: 5.0,
                         right: 5,
                       ),
@@ -57,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                     verticalSpace(16),
                     const TermsRichText(),
                     const SignupRichText(),
-                    LoginBlocListener(),
+                    const LoginBlocListener(),
                   ],
                 ),
               ],
@@ -68,13 +70,13 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  validateAndThenDoLogin(BuildContext context) {
-    final formState = context.read<LoginCubit>().formKey.currentState;
-    if (formState?.validate()??true) {
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginState(LoginRequestBody(
-            email: context.read<LoginCubit>().emailController.text,
-            password: context.read<LoginCubit>().passwordController.text,
-          ));
+        email: context.read<LoginCubit>().emailController.text,
+        password: context.read<LoginCubit>().passwordController.text,
+      ));
     }
   }
 }
