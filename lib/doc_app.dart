@@ -12,7 +12,7 @@ final AppRouter appRouter;
   Widget build(BuildContext context) {
     return ScreenUtilInit(
 
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner:false,
