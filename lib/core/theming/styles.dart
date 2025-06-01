@@ -9,16 +9,56 @@ class StylesManager {
     color: Colors.black,
     fontWeight: FontWeight.w700,
   );
+
+
+
+
+
+
+  static TextStyle font24BlueBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorManager.mainBlue,
+  );
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorManager.darkBlue,
+  );
+  static TextStyle font16WhiteSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.white,
+  );
+  static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorManager.mainBlue,
+  );
   static TextStyle font32BlueBlod = TextStyle(
     fontSize: 32.sp,
     color: ColorManager.mainBlue,
     fontWeight: FontWeight.bold,
+  );
+  static TextStyle font13DarkBlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.darkBlue,
   );
   static TextStyle font14DartBlueMedium = TextStyle(
     fontSize: 14.sp,
     color: ColorManager.darkBlue,
     fontWeight: FontWeightHelper.medium,
   );
+
+
+
+  static TextStyle font13BlueSemiBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorManager.mainBlue,
+  );
+
   static TextStyle font14GrayRegular = const TextStyle(
     fontSize: 14,
     color: ColorManager.grey,
