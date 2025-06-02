@@ -1,3 +1,21 @@
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin version (check your Flutter docs or update if needed)
+        classpath 'com.android.tools.build:gradle:8.0.2'
+
+        // Google Services plugin - required for Firebase
+        classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+
+
+
+
 allprojects {
     repositories {
         google()

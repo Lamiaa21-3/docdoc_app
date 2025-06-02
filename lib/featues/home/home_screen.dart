@@ -11,6 +11,22 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('la,sd'),
       ),
+      body: ListView.builder(
+        
+        
+        itemCount: 55,
+        itemBuilder: (index,context){
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+            
+            width: 40,
+            height: 50,
+            color:  Colors.amber,
+                    ),
+          );
+     
+      }),
     );
   }
 }
