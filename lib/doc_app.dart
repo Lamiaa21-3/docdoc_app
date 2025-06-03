@@ -21,7 +21,7 @@ final AppRouter appRouter;
           primaryColor: ColorManager.mainBlue,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.homeScreen,
       ),
 
     );

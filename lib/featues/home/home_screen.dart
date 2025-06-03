@@ -1,5 +1,7 @@
 
 
+import 'package:doc_advanced/core/theming/color.dart';
+import 'package:doc_advanced/featues/home/widgets/home_top_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,25 +10,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        title: const Text('la,sd'),
+      backgroundColor:Colors.white ,
+    body: SafeArea(
+      child:  Container(
+        margin: const EdgeInsets.fromLTRB(
+            20.0,
+            16.0,
+            20.0,
+            28.0,
+          ),
+        width:  double.infinity,
+        child: const Column(
+          children: [
+            HomeTopAppbar(),
+          ],
+        ),
       ),
-      body: ListView.builder(
-        
-        
-        itemCount: 55,
-        itemBuilder: (index,context){
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-            
-            width: 40,
-            height: 50,
-            color:  Colors.amber,
-                    ),
-          );
-     
-      }),
+    ),
     );
   }
 }
