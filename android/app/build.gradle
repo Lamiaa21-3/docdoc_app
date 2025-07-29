@@ -58,11 +58,8 @@ android {
             dimension "default"
             resValue "string", "app_name", "DocApp Production"
         }
-        Development {
-            applicationId "com.example.doc_advanced.development"
-            dimension "default"
-            applicationIdSuffix ".Development"
-            resValue "string", "app_name", "DocApp Development"
+        development {
+            applicationId "com.example.doc_advanced"
         }
     }
 
