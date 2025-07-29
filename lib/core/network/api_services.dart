@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:doc_advanced/core/network/api_constants.dart';
 import 'package:doc_advanced/featues/login/data/model/login_request_body.dart';
 import 'package:doc_advanced/featues/login/data/model/login_response.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../featues/signup/data/models/signup_request.dart';

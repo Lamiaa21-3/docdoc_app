@@ -57,6 +57,8 @@ dev_dependencies:
   retrofit_generator: ^8.0.1
   build_runner: ^2.4.6
   json_serializable: ^6.7.1
+  analyzer:
+
   flutter_test:
     sdk: flutter
 
