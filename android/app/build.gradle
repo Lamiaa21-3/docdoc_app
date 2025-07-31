@@ -60,6 +60,8 @@ android {
         }
         development {
             applicationId "com.example.doc_advanced"
+            dimension "default"
+
         }
     }
 
@@ -75,4 +77,16 @@ android {
 
 flutter {
     source = "../.."
+}
+android.applicationVariants.all { variant ->
+    if (variant.flavorName == "production") {
+        tasks["compile${variant.name.capitalize()}Kotlin"].doFirst {
+            project.ext.set("targetFile", "lib/main_production.dart")
+        }
+    }
+    if (variant.flavorName == "development") {
+        tasks["compile${variant.name.capitalize()}Kotlin"].doFirst {
+            project.ext.set("targetFile", "lib/main_development.dart")
+        }
+    }
 }
