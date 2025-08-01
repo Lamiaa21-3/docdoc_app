@@ -14,7 +14,7 @@ class DoctorsBlueContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 195.h,
+      height: 230.h,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -41,36 +41,36 @@ class DoctorsBlueContainer extends StatelessWidget {
                   style: StylesManager.font18WhiteMedium,
                   textAlign: TextAlign.start,
                 ),
-                verticalSpace(10),
-                 Expanded(
-                   child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(48.0),
-                        ),
-                      ),
-                      child: Text(
-                        'Find Nearby',
-                        style: StylesManager.font12BlueRegular,
+                verticalSpace(16),
+                 ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(48.0),
                       ),
                     ),
-                 ),
+                    child: Text(
+                      'Find Nearby',
+                      style: StylesManager.font12BlueRegular,
+                    ),
+                  ),
              
               ],
             ),
           ),
-          // Positioned(
-          //   right: 8.w,
-          //   top: 0,
-          //   child: Image.asset(
-          //     'assets/images/omar.png',
-          //     height: 200.h,
-          //   ),
-          // ),
+          Positioned(
+            right: 12.w,
+            top: 0,
+
+            child: Image.asset(
+              'asset/images/omar.png',
+              height: 250.h,
+            ),
+          ),
         ],
       ),
     );
   }
 }
+//asset/images/omar.png
