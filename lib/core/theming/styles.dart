@@ -15,7 +15,7 @@ class StylesManager {
  static TextStyle font12GrayRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
-    color: ColorManager.grey,
+    color: ColorManager.gray,
   );
    static TextStyle font18DarkBlueSemiBold = TextStyle(
     fontSize: 18.sp,
@@ -94,7 +94,7 @@ static TextStyle font12BlueRegular = TextStyle(
 
   static TextStyle font14GrayRegular = const TextStyle(
     fontSize: 14,
-    color: ColorManager.grey,
+    color: ColorManager.gray,
     fontWeight: FontWeightHelper.regular,
   );
   static TextStyle font16BlueRegular = const TextStyle(
@@ -114,7 +114,7 @@ static TextStyle font12BlueRegular = TextStyle(
   );
   static TextStyle font14LightGrayRegular = const TextStyle(
     fontSize: 14,
-    color: ColorManager.lightGrey,
+    color: ColorManager.lightGray,
     fontWeight: FontWeightHelper.regular,
   );
 }

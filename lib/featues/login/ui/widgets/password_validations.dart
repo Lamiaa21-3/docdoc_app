@@ -55,7 +55,7 @@ class PasswordValidations extends StatelessWidget {
       children: [
         const CircleAvatar(
           radius: 2.5,
-          backgroundColor: ColorManager.grey,
+          backgroundColor: ColorManager.gray,
         ),
         horizontalSpace(6),
         Text(
@@ -64,7 +64,7 @@ class PasswordValidations extends StatelessWidget {
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
-            color: hasValidated ? ColorManager.grey : ColorManager.darkBlue,
+            color: hasValidated ? ColorManager.gray : ColorManager.darkBlue,
           ),
         ),
       ],

@@ -11,10 +11,10 @@ class DoctorsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: doctorsList?.length,
+        itemCount: 11,
         itemBuilder: (context, index) {
-          return DoctorsListViewItem(
-            doctorsModel: doctorsList?[index],
+          return const DoctorsListViewItem(
+
           );
         },
       ),

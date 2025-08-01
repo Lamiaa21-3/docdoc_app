@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../data/models/specialization_response_model.dart';
-import '../../../logic/home_cubit.dart';
 import 'speciality_list_view_item.dart';
 
 class SpecialityListView extends StatefulWidget {

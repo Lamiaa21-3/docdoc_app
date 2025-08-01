@@ -33,30 +33,32 @@ class DoctorsBlueContainer extends StatelessWidget {
               //   fit: BoxFit.cover,
               // ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Book and\nschedule with\nnearest doctor',
-                  style: StylesManager.font18WhiteMedium,
-                  textAlign: TextAlign.start,
-                ),
-                verticalSpace(16),
-                 ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(48.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Book and\nschedule with\nnearest doctor',
+                    style: StylesManager.font18WhiteMedium,
+                    textAlign: TextAlign.start,
+                  ),
+                  verticalSpace(16),
+                   ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(48.0),
+                        ),
+                      ),
+                      child: Text(
+                        'Find Nearby',
+                        style: StylesManager.font12BlueRegular,
                       ),
                     ),
-                    child: Text(
-                      'Find Nearby',
-                      style: StylesManager.font12BlueRegular,
-                    ),
-                  ),
-             
-              ],
+
+                ],
+              ),
             ),
           ),
           Positioned(
