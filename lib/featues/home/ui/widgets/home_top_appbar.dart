@@ -20,7 +20,7 @@ class HomeTopBar extends StatelessWidget {
             ),
             Text(
               'How Are you Today?',
-              style: StylesManager.font18DarkBlueBold,
+              style: StylesManager.font12GrayRegular,
             ),
           ],
         ),
@@ -29,7 +29,7 @@ class HomeTopBar extends StatelessWidget {
           radius: 24.0,
           backgroundColor: ColorManager.moreLighterGray,
           child: SvgPicture.asset(
-            'assets/svgs/notifications.svg',
+            'asset/svgs/notifications.svg',
           ),
         )
       ],

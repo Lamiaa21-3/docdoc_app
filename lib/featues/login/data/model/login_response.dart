@@ -4,6 +4,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_response.g.dart';
+//عادةً بتكتب دوال fromJson و toJson بنفسك، لكن ده بيبقى مجهود وممكن يحصل فيه أخطاء.
 @JsonSerializable()
 class LoginResponse{
   String? message;
