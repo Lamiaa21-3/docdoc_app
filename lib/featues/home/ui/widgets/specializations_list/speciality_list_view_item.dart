@@ -10,12 +10,12 @@ import '../../../data/models/specialization_response_model.dart';
 class SpecialityListViewItem extends StatelessWidget {
   final SpecializationsData? specializationsData;
   final int itemIndex;
-  final int selectedIndex;
+
   const SpecialityListViewItem({
     super.key,
     this.specializationsData,
     required this.itemIndex,
-    required this.selectedIndex,
+
   });
 
   @override
@@ -24,8 +24,8 @@ class SpecialityListViewItem extends StatelessWidget {
       padding: EdgeInsetsDirectional.only(start: itemIndex == 0 ? 0 : 24.w),
       child: Column(
         children: [
-          itemIndex == selectedIndex
-              ? Container(
+
+               Container(
             decoration: BoxDecoration(
               border: Border.all(
                 color: ColorManager.mainBlue,
@@ -41,22 +41,13 @@ class SpecialityListViewItem extends StatelessWidget {
                 width: 42.w,
               ),
             ),
-          )
-              : CircleAvatar(
-            radius: 28,
-            backgroundColor: ColorManager.mainBlue,
-            child: SvgPicture.asset(
-              'assets/svgs/general_speciality.svg',
-              height: 40.h,
-              width: 40.w,
-            ),
           ),
+
           verticalSpace(8),
           Text(
             specializationsData?.name ?? 'Specialization',
-            style: itemIndex == selectedIndex
-                ? StylesManager.font14DarkBlueBold
-                : StylesManager.font12DarkBlueRegular,
+            style:
+                StylesManager.font12DarkBlueRegular,
           ),
         ],
       ),

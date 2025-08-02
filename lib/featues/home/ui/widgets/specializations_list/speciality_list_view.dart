@@ -4,17 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/models/specialization_response_model.dart';
 import 'speciality_list_view_item.dart';
 
-class SpecialityListView extends StatefulWidget {
-  final List<SpecializationsData?> specializationDataList;
-  const SpecialityListView(
+class SpecialityListView extends StatelessWidget {
+  final List<SpecializationsData?>? specializationDataList;
+   SpecialityListView(
       {super.key, required this.specializationDataList});
 
-  @override
-  State<SpecialityListView> createState() =>
-      _SpecialityListViewState();
-}
-
-class _SpecialityListViewState extends State<SpecialityListView> {
   var selectedSpecializationIndex = 0;
 
   @override
@@ -23,21 +17,21 @@ class _SpecialityListViewState extends State<SpecialityListView> {
       height: 100.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: widget.specializationDataList.length,
+        itemCount: specializationDataList?.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              setState(() {
-                selectedSpecializationIndex = index;
-              });
+              // setState(() {
+              //   selectedSpecializationIndex = index;
+              // });
               // context.read<HomeCubit>().getDoctorsList(
               //   specializationId: widget.specializationDataList[index]?.id,
               // );
             },
             child: SpecialityListViewItem(
-              specializationsData: widget.specializationDataList[index],
+              specializationsData: specializationDataList?[index],
               itemIndex: index,
-              selectedIndex: selectedSpecializationIndex,
+
             ),
           );
         },
