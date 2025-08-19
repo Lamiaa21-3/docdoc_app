@@ -1,9 +1,12 @@
 import 'package:doc_advanced/core/routing/app_router.dart';
 import 'package:doc_advanced/core/theming/color.dart';
+import 'package:doc_advanced/featues/home/ui/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/helper/constants.dart';
 import 'core/routing/routes.dart';
+import 'main_development.dart';
 
 class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
@@ -21,7 +24,7 @@ final AppRouter appRouter;
           primaryColor: ColorManager.mainBlue,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.homeScreen,
+        initialRoute:isLoggedInUser?Routes.homeScreen: Routes.loginScreen,
       ),
 
     );

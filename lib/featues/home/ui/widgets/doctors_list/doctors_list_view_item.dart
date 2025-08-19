@@ -23,7 +23,10 @@ class DoctorsListViewItem extends StatelessWidget {
       child: Row(
         children: [
           CachedNetworkImage(
+            height: 80.h,
+            width: 80.w,
             imageUrl:
+
                 "https://static.wikia.nocookie.net/five-world-war/images/6/64/Hisoka.jpg/revision/latest?cb=20190313114050",
             progressIndicatorBuilder: (context, url, downloadProgress) =>
                 CircularProgressIndicator(
@@ -33,6 +36,7 @@ class DoctorsListViewItem extends StatelessWidget {
               Icons.error,
             ),
           ),
+          horizontalSpace(12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

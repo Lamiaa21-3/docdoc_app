@@ -13,7 +13,7 @@ final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
   //dio services
-  Dio dio = DioFactory.getDio();
+  Dio dio = await DioFactory.getDio();
   getIt.registerLazySingleton<ApiServices>(() => ApiServices(dio));
 
 //****************************//

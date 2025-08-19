@@ -51,7 +51,7 @@ dependencies:
   intl:
   easy_localization: ^3.0.7+1
   firebase_core: ^3.13.1
-
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   retrofit_generator: ^8.0.1

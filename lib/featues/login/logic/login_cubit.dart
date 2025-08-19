@@ -1,3 +1,6 @@
+import 'package:doc_advanced/core/helper/constants.dart';
+import 'package:doc_advanced/core/helper/shared_pref_helper.dart';
+import 'package:doc_advanced/core/network/dio_factory.dart';
 import 'package:doc_advanced/featues/login/data/model/login_request_body.dart';
 import 'package:doc_advanced/featues/login/logic/login_state.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,16 +18,22 @@ class LoginCubit extends Cubit<LoginState> {
 
   void emitLoginState(LoginRequestBody loginRequestBody) async {
     emit(const LoginState.loading());
-    final respone = await _loginRepo.login(
+    final response = await _loginRepo.login(
       LoginRequestBody(
         email: emailController.text,
         password: passwordController.text,
       ),
     );
-    respone.when(success: (loginResponse) {
+    response.when(success: (loginResponse) async{
+      await saveUserToken(loginResponse.userData?.token??'');
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error));
     });
   }
+Future<void>saveUserToken(String token)async{
+
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);//key:value
+    DioFactory.setTokenAfterLogin(token);
+}
 }
