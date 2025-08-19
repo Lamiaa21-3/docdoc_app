@@ -25,7 +25,7 @@ class DioFactory {
     }
   }
   static Future<void> addDioHeaders() async {
-    final token = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+    final token = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
     dio?.options.headers = {
       'Accept': 'application/json',
       // if (token != null && token.isNotEmpty)
