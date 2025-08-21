@@ -10,12 +10,13 @@ import '../../../data/models/specialization_response_model.dart';
 class SpecialityListViewItem extends StatelessWidget {
   final SpecializationsData? specializationsData;
   final int itemIndex;
+  final int selectedIndex;
 
   const SpecialityListViewItem({
     super.key,
     this.specializationsData,
     required this.itemIndex,
-
+    required this.selectedIndex,
   });
 
   @override
@@ -24,30 +25,42 @@ class SpecialityListViewItem extends StatelessWidget {
       padding: EdgeInsetsDirectional.only(start: itemIndex == 0 ? 0 : 24.w),
       child: Column(
         children: [
-
-               Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: ColorManager.mainBlue,
-              ),
-              shape: BoxShape.circle,
-            ),
-            child: CircleAvatar(
-              radius: 28,
-              backgroundColor: ColorManager.mainBlue,
-              child: SvgPicture.asset(
-                'assets/svgs/general_speciality.svg',
-                height: 42.h,
-                width: 42.w,
-              ),
-            ),
-          ),
-
+          itemIndex == selectedIndex
+              ? Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: ColorManager.darkBlue),
+                    shape: BoxShape.circle,
+                  ),
+                  child: CircleAvatar(
+                    radius: 28,
+                    backgroundColor: ColorManager.lightBlue,
+                    child: SvgPicture.asset(
+                      'assets/svgs/general_speciality.svg',
+                      height: 42.h,
+                      width: 42.h,
+                    ),
+                  ))
+              : Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: ColorManager.mainBlue,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                  child: CircleAvatar(
+                    radius: 28,
+                    backgroundColor: ColorManager.mainBlue,
+                    child: SvgPicture.asset(
+                      'assets/svgs/general_speciality.svg',
+                      height: 42.h,
+                      width: 42.w,
+                    ),
+                  ),
+                ),
           verticalSpace(8),
           Text(
             specializationsData?.name ?? 'Specialization',
-            style:
-                StylesManager.font12DarkBlueRegular,
+            style: StylesManager.font12DarkBlueRegular,
           ),
         ],
       ),

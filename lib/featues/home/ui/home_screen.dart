@@ -1,7 +1,9 @@
 import 'package:doc_advanced/featues/home/logic/home_cubit.dart';
 import 'package:doc_advanced/featues/home/logic/home_state.dart';
+import 'package:doc_advanced/featues/home/ui/widgets/doctors_list/doctors_bloc_builder.dart';
 import 'package:doc_advanced/featues/home/ui/widgets/doctors_list/doctors_list_view.dart';
 import 'package:doc_advanced/featues/home/ui/widgets/home_top_appbar.dart';
+import 'package:doc_advanced/featues/home/ui/widgets/specializations_list/specializations_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,27 +37,27 @@ class HomeScreen extends StatelessWidget {
               const DoctorsSpecialitySeeAll(),
               verticalSpace(18),
 
-              BlocBuilder<HomeCubit, HomeState>(
-                buildWhen: (previous, current) =>
-                    current is SpecializationLoading ||
-                    current is SpecializationError ||
-                    current is SpecializationSuccess,
-                builder: (context, state) {
-                  return state.maybeWhen(
-                      specializationLoading: () => setupLoading(),
-                      specializationError: (error) =>setupError(),
-                      specializationSuccess: (specializationResponseModel) {
-                        var specializationList = specializationResponseModel;
-                      return setupSuccess(specializationList);
-                      },
-                      orElse: () {
-                        return const SizedBox.shrink();
-                      });
-                },
-              )
-              // const DoctorSpecialityListView(),
-              // verticalSpace(8),
-              // const DoctorsListView(),
+              // BlocBuilder<HomeCubit, HomeState>(
+              //   buildWhen: (previous, current) =>
+              //       current is SpecializationLoading ||
+              //       current is SpecializationError ||
+              //       current is SpecializationSuccess,
+              //   builder: (context, state) {
+              //     return state.maybeWhen(
+              //         specializationLoading: () => setupLoading(),
+              //         specializationError: (error) =>setupError(),
+              //         specializationSuccess: (specializationResponseModel) {
+              //           var specializationList = specializationResponseModel;
+              //         return setupSuccess(specializationList);
+              //         },
+              //         orElse: () {
+              //           return const SizedBox.shrink();
+              //         });
+              //   },
+              // ),
+              const SpecializationsBlocBuilder(),
+              verticalSpace(8),
+              const DoctorsBlocBuilder(),
             ],
           ),
         ),
